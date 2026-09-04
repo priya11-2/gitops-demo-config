@@ -29,7 +29,10 @@ spec:
     canary:
       steps:
         - setWeight: 20
-        - pause: { duration: 20s }
+        - pause: { duration: 15s }
+        - analysis:
+            templates:
+              - templateName: health-check
         - setWeight: 50
-        - pause: { duration: 20s }
+        - pause: { duration: 15s }
         - setWeight: 100

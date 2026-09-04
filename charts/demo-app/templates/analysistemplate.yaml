@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  name: health-check
+  namespace: {{ .Values.namespace }}
+spec:
+  metrics:
+    - name: health-check
+      interval: 10s
+      count: 3
+      successCondition: result.status == 200
+      failureLimit: 1
+      provider:
+        web:
+          url: "http://demo-app.{{ .Values.namespace }}.svc.cluster.local/health"
+          timeoutSeconds: 5
+          jsonPath: "{$.status}"
