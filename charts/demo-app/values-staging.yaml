@@ -1,0 +1,5 @@
+namespace: staging
+replicas: 2
+image:
+  repository: demo-app
+  tag: v1

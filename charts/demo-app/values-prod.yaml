@@ -1,0 +1,5 @@
+namespace: prod
+replicas: 3
+image:
+  repository: demo-app
+  tag: v1
