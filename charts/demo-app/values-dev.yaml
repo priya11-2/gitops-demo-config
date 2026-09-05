@@ -2,4 +2,4 @@ namespace: dev
 replicas: 2
 image:
   repository: demo-app
-  tag: v2-broken
+  tag: v1
