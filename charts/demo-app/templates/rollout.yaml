@@ -22,7 +22,7 @@ spec:
             - name: APP_VERSION
               value: "{{ .Values.image.tag }}"
           readinessProbe:
-            httpGet: { path: /health, port: 3000 }
+            httpGet: { path: /ready, port: 3000 }
             initialDelaySeconds: 3
             periodSeconds: 5
   strategy:
