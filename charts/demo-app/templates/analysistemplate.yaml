@@ -9,9 +9,9 @@ spec:
       interval: 10s
       count: 3
       successCondition: "result == 'healthy'"
-      failureLimit: 1
+      failureLimit: 0
       provider:
         web:
-          url: "http://demo-app.{{ .Values.namespace }}.svc.cluster.local/health"
+          url: "http://demo-app-canary.{{ .Values.namespace }}.svc.cluster.local/health"
           timeoutSeconds: 5
           jsonPath: "{$.status}"

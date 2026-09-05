@@ -27,6 +27,8 @@ spec:
             periodSeconds: 5
   strategy:
     canary:
+      canaryService: demo-app-canary
+      stableService: demo-app-stable
       steps:
         - setWeight: 20
         - pause: { duration: 15s }
